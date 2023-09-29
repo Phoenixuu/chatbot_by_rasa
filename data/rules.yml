@@ -1,0 +1,54 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Activate coffee Form
+  steps: 
+  - intent: buy_coffee
+  - action: utter_ask_coffee_type 
+  - action: simple_coffee_form
+  - active_loop: simple_coffee_form
+
+- rule: Submit coffee Form
+  condition:
+  - active_loop: simple_coffee_form
+  steps:
+  - action: simple_coffee_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_coffee_slots
+
+- rule: Trả lời khi hỏi về size
+  steps: 
+  - intent: coffee_size_question
+  - action: answer_size_question
+  - action: utter_ask_coffee_size
+
+- rule: Trả lời khi hỏi về type
+  steps:
+  - intent: coffee_type_question
+  - action: answer_type_question
+  - action: utter_ask_coffee_type
+
+- rule: Trả lời số bàn
+  steps:
+  - action: utter_where
+  - intent: where
+  - action: utter_done
+

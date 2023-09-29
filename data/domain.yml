@@ -1,0 +1,74 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirm
+- bot_challenge
+- conversation
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- buy_coffee
+- request_coffee_form
+- inform
+- coffee_type_question
+- coffee_size_question
+- where
+entities:
+- coffee_size
+- coffee_type
+slots:
+  coffee_size:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: coffee_size
+  coffee_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: coffee_type
+responses:
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_submit:
+  - text: I will now order a coffee for you !
+  utter_coffee_slots:
+  - text: I will order a {coffee_size}{coffee_type} coffee.
+  utter_ask_coffee_size:
+  - text: Bạn muốn đặt cafe size nào?
+  utter_ask_coffee_type:
+  - text: Bạn muốn mua cafe loại nào?
+  utter_greet:
+  - text: Chào bạn, tôi có thể giúp được gì cho bạn?
+  answer_type_question:
+  - text: Chúng tôi có các loại cafe thông thường như capuchino, mocha, latte, americano, caramel, espresso, black cafe.
+  answer_size_question:
+  - text: Chúng tôi có các size s, m, l.
+  utter_where:
+  - text: Bạn ngồi ở bàn số mấy?
+  utter_done:
+  - text: Đơn đặt hàng của bạn đang được xử lý, vui lòng đợi 1 chút
+actions:
+- utter_cheer_up
+- utter_did_that_help
+- utter_greet
+- utter_ask_continue
+- utter_goodbye
+- utter_coffee_slots
+- utter_submit
+- utter_type_question
+- utter_size_question
+- validate_simple_coffee_form
+forms:
+  simple_coffee_form:
+    required_slots:
+    - coffee_size
+    - coffee_type

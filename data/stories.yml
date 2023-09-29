@@ -1,0 +1,60 @@
+# version: "3.1"
+
+# stories:
+
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+
+
+# # - story: User interrupts the form and doesn't want to continue
+# #   steps:
+# #   - intent: request_restaurant
+# #   - action: restaurant_form
+# #   - active_loop: restaurant_form
+# #   - intent: stop
+# #   - action: utter_ask_continue
+# #   - intent: stop
+# #   - action: action_deactivate_loop
+# #   - active_loop: null
+
+# # - story: greet 
+# #   steps: 
+# #   - action: action_log_in
+# #   - slot_was_set:
+# #     -logged_in: true
+# #   - intent: greet
+# #   - action: utter_greet
+

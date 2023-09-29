@@ -1,0 +1,96 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - chào buổi sáng
+    - Buổi sáng tốt lành
+    - Xin chào
+    - Chào bạn
+    - Chào anh
+    - Chào chị
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - Tạm biệt
+    - Hẹn gặp lại
+    - good night
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: buy_coffee
+  examples: |
+    - Tôi muốn mua cà phê
+    - Tôi muốn mua coffee
+    - Tôi muốn mua cafe
+    - Ở đây có bán cafe không?
+    - Tôi muốn đặt món
+    - Tôi muốn uống cafe
+    - Có cà phê cho tôi không?
+    - Quán có bán cà phê không?
+    - Quán có phục vụ cafe không?
+    - Quán có hỗ trợ cafe không?
+    - Có cà phê không?
+
+- intent: inform
+  examples: |
+    - Tôi muốn [large](coffee_size) cafe
+    - Tôi muốn đặt size [l](coffee_size) [Capuchino](coffee_type) cafe
+    - Tôi muốn mua [capuchino](coffee_type) size [m](coffee_size)
+    - [medium](coffee_size) cafe
+    - [l](coffee_size) cafe
+    - [small](coffee_size)
+    - [s](coffee_size)
+    - [Mocha](coffee_size)
+    - cho tôi [Latte](coffee_type) cafe
+    - [Americano](coffee_type) cafe
+    - [small](coffee_size)
+    - [Caramel](coffee_type)
+    - Tôi muốn mua [large][coffee_type]
+    - [Capuchino](coffee_type)
+    - [Latte](coffee_type)
+    - [Mocha](coffee_type)
+    - [Espresso](coffee_type)
+    - [s](coffee_size)
+    - [medium](coffee_size) Latte(coffee_type)
+    - Một cốc [large](coffee_size) [Black coffee](coffee_type)
+
+- intent: coffee_type_question
+  examples: |
+    - Ở đây có những loại cà phê nào?
+    - Ở đây có những loại cafe nào?
+    - Ở đây có bán đồ uống gì?
+    - Tôi có thể gọi những món gì?
+    - Có những loại cafe nào ở đây?
+    - Quán bán những loại cafe nào?
+    - Những loại cafe quán bán là gì?
+
+- intent: coffee_size_question
+  examples: |
+    - Ở đây có những size nào?
+    - Ở đây có sai nào?
+    - Ở đây có size nào?
+    - Quán có những size nào?
+    - Quán phục vụ size nào?
+    - Có sai nào ở quán thế?
+    - Có những sai nào?
+    - Có những size nào?
+
+- intent: where
+  examples: |
+    - Chúng tôi ở bàn số 3
+    - Chúng tôi ở bàn số 5
+    - Chúng tôi ở bàn số 7
+    - Bàn 8
+    - Bàn 4
+    - Tôi ở bàn 12
+    - Bọn tôi ở bàn 1
